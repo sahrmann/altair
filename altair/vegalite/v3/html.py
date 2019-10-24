@@ -9,6 +9,14 @@ HTML_TEMPLATE = """
 <body>
   <div id="vis"></div>
   <script type="text/javascript">
+    // change to German locale
+    vegaEmbed.vega.formatLocale({
+      "decimal": ",",
+      "thousands": ".",
+      "grouping": [3],
+      "currency": ["", "\u00a0€"]
+    });
+    
     var spec = {spec};
     var opt = {opt};
     vegaEmbed("#vis", spec, opt);
